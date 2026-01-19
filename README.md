@@ -131,13 +131,17 @@ To improve interpretability and reduce dimensionality, the following features ar
 
 ### 3.4 Ensemble-Based Anomaly Detection
 
-- Combine **engineered features** and **anomaly signals** into a 278-dimensional vector.  
-- Train an ensemble of classifiers:
-  - Random Forest  
-  - Gradient Boosting  
-  - Multi-Layer Perceptron (MLP)
+- Deploy multiple **unsupervised anomaly detectors** on engineered features and learned representations:
+  - **LSTM Autoencoder** (reconstruction error)  
+  - **Variational Autoencoder (VAE)** (reconstruction + KL divergence)  
+  - **Isolation Forest** (tree-based outlier detection)  
+  - **Local Outlier Factor (LOF)** (density-based detection)  
+  - **Feature Autoencoder** (dimensionality-reduced reconstruction)  
+  - **LSTM Latent Distance** (manifold deviation)
 
-- Combine predictions via **majority voting** to produce final anomaly score per window.
+- Each detector produces anomaly scores on test data  
+- Combine predictions via **equal-weight averaging** to produce final anomaly score per window  
+- Apply threshold optimization on validation set to convert scores to binary predictions
 
 ---
 
@@ -160,12 +164,16 @@ Signals are later fused with engineered features.
 
 ## 5. Ensemble-Based Detection
 
-- Concatenate engineered features and anomaly signals (vector size: 278)  
-- Train an ensemble of:
-  - Random Forest
-  - Gradient Boosting
-  - MLP  
-- Combine predictions via **majority voting**
+- Deploy multiple unsupervised detectors on engineered features (276 dims) and latent signals (2 dims)  
+- Individual detectors:
+  - **LSTM Autoencoder** reconstruction error  
+  - **VAE** reconstruction + KL divergence  
+  - **Isolation Forest** outlier scoring  
+  - **Local Outlier Factor (LOF)** density-based scoring  
+  - **Feature Autoencoder** compressed reconstruction  
+  - **LSTM Latent Distance** from normal manifold  
+- Ensemble via **equal-weight averaging** of anomaly scores  
+- **No labeled anomaly data required** during training
 
 ---
 
