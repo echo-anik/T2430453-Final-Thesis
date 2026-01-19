@@ -1,0 +1,108 @@
+{
+  "dataset": {
+    "total_samples": 34541,
+    "contamination": 0.06580585391274138,
+    "anomalies": 2273,
+    "normal": 32268
+  },
+  "confusion_matrices": {
+    "LSTM Reconstruction": {
+      "TP": 1624,
+      "FP": 632,
+      "TN": 31636,
+      "FN": 649
+    },
+    "LSTM Latent Distance": {
+      "TP": 1496,
+      "FP": 989,
+      "TN": 31279,
+      "FN": 777
+    },
+    "VAE Reconstruction": {
+      "TP": 1488,
+      "FP": 673,
+      "TN": 31595,
+      "FN": 785
+    },
+    "VAE KL Divergence": {
+      "TP": 1211,
+      "FP": 1225,
+      "TN": 31043,
+      "FN": 1062
+    },
+    "Feature Autoencoder": {
+      "TP": 1337,
+      "FP": 1133,
+      "TN": 31135,
+      "FN": 936
+    },
+    "Isolation Forest": {
+      "TP": 1389,
+      "FP": 1074,
+      "TN": 31194,
+      "FN": 884
+    },
+    "Local Outlier Factor": {
+      "TP": 1227,
+      "FP": 870,
+      "TN": 31398,
+      "FN": 1046
+    },
+    "Optimized Ensemble": {
+      "TP": 1806,
+      "FP": 696,
+      "TN": 31572,
+      "FN": 467
+    }
+  },
+  "metrics": {
+    "LSTM Reconstruction": {
+      "f1": 0.7018,
+      "precision": 0.7196,
+      "recall": 0.7149,
+      "accuracy": 0.9629136388639588
+    },
+    "LSTM Latent Distance": {
+      "f1": 0.6287,
+      "precision": 0.6019,
+      "recall": 0.6582,
+      "accuracy": 0.9488723545930923
+    },
+    "VAE Reconstruction": {
+      "f1": 0.6712,
+      "precision": 0.6885,
+      "recall": 0.6547,
+      "accuracy": 0.9577892938826322
+    },
+    "VAE KL Divergence": {
+      "f1": 0.5143,
+      "precision": 0.4971,
+      "recall": 0.5329,
+      "accuracy": 0.9337888306650068
+    },
+    "Feature Autoencoder": {
+      "f1": 0.5639,
+      "precision": 0.5412,
+      "recall": 0.5886,
+      "accuracy": 0.9401001708114993
+    },
+    "Isolation Forest": {
+      "f1": 0.5864,
+      "precision": 0.5638,
+      "recall": 0.6111,
+      "accuracy": 0.9433137430879245
+    },
+    "Local Outlier Factor": {
+      "f1": 0.5617,
+      "precision": 0.5849,
+      "recall": 0.5402,
+      "accuracy": 0.94452968935468
+    },
+    "Optimized Ensemble": {
+      "f1": 0.7564,
+      "precision": 0.7218,
+      "recall": 0.7947,
+      "accuracy": 0.9663298688515098
+    }
+  }
+}

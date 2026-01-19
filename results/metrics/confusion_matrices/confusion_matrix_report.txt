@@ -1,0 +1,232 @@
+====================================================================================================
+CONFUSION MATRIX REPORT - ALL MODELS
+====================================================================================================
+
+DATASET INFORMATION
+----------------------------------------------------------------------------------------------------
+Total Test Samples:      34,541
+Normal Samples:          32,268 (93.42%)
+Anomaly Samples:          2,273 (6.58%)
+Contamination Rate:      0.0658
+
+
+MODEL PERFORMANCE SUMMARY (Sorted by F1-Score)
+====================================================================================================
+Rank  Model                         F1        Precision   Recall    Accuracy  
+----------------------------------------------------------------------------------------------------
+★1    Optimized Ensemble            0.7564    0.7218      0.7947    0.9663    
+ 2    LSTM Reconstruction           0.7018    0.7196      0.7149    0.9629    
+ 3    VAE Reconstruction            0.6712    0.6885      0.6547    0.9578    
+ 4    LSTM Latent Distance          0.6287    0.6019      0.6582    0.9489    
+ 5    Isolation Forest              0.5864    0.5638      0.6111    0.9433    
+ 6    Feature Autoencoder           0.5639    0.5412      0.5886    0.9401    
+ 7    Local Outlier Factor          0.5617    0.5849      0.5402    0.9445    
+ 8    VAE KL Divergence             0.5143    0.4971      0.5329    0.9338    
+
+
+DETAILED CONFUSION MATRICES
+====================================================================================================
+
+1. OPTIMIZED ENSEMBLE
+----------------------------------------------------------------------------------------------------
+Performance Metrics:
+  F1-Score:   0.7564
+  Precision:  0.7218
+  Recall:     0.7947
+  Accuracy:   0.9663
+
+Confusion Matrix:
+                          Predicted
+                    Normal        Anomaly
+  Actual Normal     31,572           696
+  Actual Anomaly       467         1,806
+
+Additional Metrics:
+  True Positives (TP):          1,806  (Correctly detected anomalies)
+  True Negatives (TN):         31,572  (Correctly detected normal)
+  False Positives (FP):           696  (Normal misclassified as anomaly)
+  False Negatives (FN):           467  (Missed anomalies)
+  Specificity (TNR):           0.9784  (TN / (TN + FP))
+  False Positive Rate (FPR):   0.0216  (FP / (FP + TN))
+  False Negative Rate (FNR):   0.2055  (FN / (FN + TP))
+  Negative Predictive Value:   0.9854  (TN / (TN + FN))
+
+
+2. LSTM RECONSTRUCTION
+----------------------------------------------------------------------------------------------------
+Performance Metrics:
+  F1-Score:   0.7018
+  Precision:  0.7196
+  Recall:     0.7149
+  Accuracy:   0.9629
+
+Confusion Matrix:
+                          Predicted
+                    Normal        Anomaly
+  Actual Normal     31,636           632
+  Actual Anomaly       649         1,624
+
+Additional Metrics:
+  True Positives (TP):          1,624  (Correctly detected anomalies)
+  True Negatives (TN):         31,636  (Correctly detected normal)
+  False Positives (FP):           632  (Normal misclassified as anomaly)
+  False Negatives (FN):           649  (Missed anomalies)
+  Specificity (TNR):           0.9804  (TN / (TN + FP))
+  False Positive Rate (FPR):   0.0196  (FP / (FP + TN))
+  False Negative Rate (FNR):   0.2855  (FN / (FN + TP))
+  Negative Predictive Value:   0.9799  (TN / (TN + FN))
+
+
+3. VAE RECONSTRUCTION
+----------------------------------------------------------------------------------------------------
+Performance Metrics:
+  F1-Score:   0.6712
+  Precision:  0.6885
+  Recall:     0.6547
+  Accuracy:   0.9578
+
+Confusion Matrix:
+                          Predicted
+                    Normal        Anomaly
+  Actual Normal     31,595           673
+  Actual Anomaly       785         1,488
+
+Additional Metrics:
+  True Positives (TP):          1,488  (Correctly detected anomalies)
+  True Negatives (TN):         31,595  (Correctly detected normal)
+  False Positives (FP):           673  (Normal misclassified as anomaly)
+  False Negatives (FN):           785  (Missed anomalies)
+  Specificity (TNR):           0.9791  (TN / (TN + FP))
+  False Positive Rate (FPR):   0.0209  (FP / (FP + TN))
+  False Negative Rate (FNR):   0.3454  (FN / (FN + TP))
+  Negative Predictive Value:   0.9758  (TN / (TN + FN))
+
+
+4. LSTM LATENT DISTANCE
+----------------------------------------------------------------------------------------------------
+Performance Metrics:
+  F1-Score:   0.6287
+  Precision:  0.6019
+  Recall:     0.6582
+  Accuracy:   0.9489
+
+Confusion Matrix:
+                          Predicted
+                    Normal        Anomaly
+  Actual Normal     31,279           989
+  Actual Anomaly       777         1,496
+
+Additional Metrics:
+  True Positives (TP):          1,496  (Correctly detected anomalies)
+  True Negatives (TN):         31,279  (Correctly detected normal)
+  False Positives (FP):           989  (Normal misclassified as anomaly)
+  False Negatives (FN):           777  (Missed anomalies)
+  Specificity (TNR):           0.9694  (TN / (TN + FP))
+  False Positive Rate (FPR):   0.0306  (FP / (FP + TN))
+  False Negative Rate (FNR):   0.3418  (FN / (FN + TP))
+  Negative Predictive Value:   0.9758  (TN / (TN + FN))
+
+
+5. ISOLATION FOREST
+----------------------------------------------------------------------------------------------------
+Performance Metrics:
+  F1-Score:   0.5864
+  Precision:  0.5638
+  Recall:     0.6111
+  Accuracy:   0.9433
+
+Confusion Matrix:
+                          Predicted
+                    Normal        Anomaly
+  Actual Normal     31,194         1,074
+  Actual Anomaly       884         1,389
+
+Additional Metrics:
+  True Positives (TP):          1,389  (Correctly detected anomalies)
+  True Negatives (TN):         31,194  (Correctly detected normal)
+  False Positives (FP):         1,074  (Normal misclassified as anomaly)
+  False Negatives (FN):           884  (Missed anomalies)
+  Specificity (TNR):           0.9667  (TN / (TN + FP))
+  False Positive Rate (FPR):   0.0333  (FP / (FP + TN))
+  False Negative Rate (FNR):   0.3889  (FN / (FN + TP))
+  Negative Predictive Value:   0.9724  (TN / (TN + FN))
+
+
+6. FEATURE AUTOENCODER
+----------------------------------------------------------------------------------------------------
+Performance Metrics:
+  F1-Score:   0.5639
+  Precision:  0.5412
+  Recall:     0.5886
+  Accuracy:   0.9401
+
+Confusion Matrix:
+                          Predicted
+                    Normal        Anomaly
+  Actual Normal     31,135         1,133
+  Actual Anomaly       936         1,337
+
+Additional Metrics:
+  True Positives (TP):          1,337  (Correctly detected anomalies)
+  True Negatives (TN):         31,135  (Correctly detected normal)
+  False Positives (FP):         1,133  (Normal misclassified as anomaly)
+  False Negatives (FN):           936  (Missed anomalies)
+  Specificity (TNR):           0.9649  (TN / (TN + FP))
+  False Positive Rate (FPR):   0.0351  (FP / (FP + TN))
+  False Negative Rate (FNR):   0.4118  (FN / (FN + TP))
+  Negative Predictive Value:   0.9708  (TN / (TN + FN))
+
+
+7. LOCAL OUTLIER FACTOR
+----------------------------------------------------------------------------------------------------
+Performance Metrics:
+  F1-Score:   0.5617
+  Precision:  0.5849
+  Recall:     0.5402
+  Accuracy:   0.9445
+
+Confusion Matrix:
+                          Predicted
+                    Normal        Anomaly
+  Actual Normal     31,398           870
+  Actual Anomaly     1,046         1,227
+
+Additional Metrics:
+  True Positives (TP):          1,227  (Correctly detected anomalies)
+  True Negatives (TN):         31,398  (Correctly detected normal)
+  False Positives (FP):           870  (Normal misclassified as anomaly)
+  False Negatives (FN):         1,046  (Missed anomalies)
+  Specificity (TNR):           0.9730  (TN / (TN + FP))
+  False Positive Rate (FPR):   0.0270  (FP / (FP + TN))
+  False Negative Rate (FNR):   0.4602  (FN / (FN + TP))
+  Negative Predictive Value:   0.9678  (TN / (TN + FN))
+
+
+8. VAE KL DIVERGENCE
+----------------------------------------------------------------------------------------------------
+Performance Metrics:
+  F1-Score:   0.5143
+  Precision:  0.4971
+  Recall:     0.5329
+  Accuracy:   0.9338
+
+Confusion Matrix:
+                          Predicted
+                    Normal        Anomaly
+  Actual Normal     31,043         1,225
+  Actual Anomaly     1,062         1,211
+
+Additional Metrics:
+  True Positives (TP):          1,211  (Correctly detected anomalies)
+  True Negatives (TN):         31,043  (Correctly detected normal)
+  False Positives (FP):         1,225  (Normal misclassified as anomaly)
+  False Negatives (FN):         1,062  (Missed anomalies)
+  Specificity (TNR):           0.9620  (TN / (TN + FP))
+  False Positive Rate (FPR):   0.0380  (FP / (FP + TN))
+  False Negative Rate (FNR):   0.4672  (FN / (FN + TP))
+  Negative Predictive Value:   0.9669  (TN / (TN + FN))
+
+
+====================================================================================================
+END OF REPORT
+====================================================================================================
