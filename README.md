@@ -83,13 +83,22 @@ This work addresses these challenges through a truly unsupervised ensemble appro
 
 This chapter presents the proposed framework for unsupervised anomaly detection in ICS. The methodology consists of three main phases: temporal-statistical feature engineering, latent representation learning, and ensemble-based anomaly detection.
 
+**Related Documentation:** For detailed explanation of the complete data transformation pipeline from raw samples to temporal windows, see [Data Transformation Pipeline Documentation](results/thesis_visuals/DATA_TRANSFORMATION_EXPLAINED.md).
+
 ---
 
 ### 3.1 Data Preprocessing and Windowing
 
-- Raw sensor data from WADI dataset is segmented into **windows of 100 timesteps**.  
-- Each window contains **30 sensor readings**, forming a 100×30 matrix → **3,000 raw features per window**.  
-- Normal operation windows are used for training; test windows include attack scenarios.
+**Preprocessing Pipeline:** The WADI dataset undergoes systematic transformation from raw sensor measurements to temporal windows. For comprehensive details on each preprocessing stage, refer to the [Data Transformation Pipeline](results/thesis_visuals/DATA_TRANSFORMATION_EXPLAINED.md).
+
+**Pipeline Overview:**
+
+- Raw sensor data from WADI dataset (784,571 training samples × 130 features)
+- Feature selection: 130 → 30 features (K-S test, variance filtering, constant removal)
+- Temporal windowing: samples segmented into **windows of 100 timesteps**
+- Each window contains **30 sensor readings**, forming a 100×30 matrix → **3,000 raw features per window**
+- Normal operation windows used for training; test windows include attack scenarios
+- Final dataset: 141,206 training windows, 15,689 validation windows, 34,541 test windows
 
 ---
 
