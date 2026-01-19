@@ -1,0 +1,105 @@
+{
+  "best_method": {
+    "name": "Optimized Ensemble",
+    "f1": 0.7564,
+    "precision": 0.7218,
+    "recall": 0.7947
+  },
+  "all_methods": {
+    "LSTM Reconstruction": {
+      "f1": 0.7018,
+      "precision": 0.7196,
+      "recall": 0.7149
+    },
+    "LSTM Latent Distance": {
+      "f1": 0.6287,
+      "precision": 0.6019,
+      "recall": 0.6582
+    },
+    "VAE Reconstruction": {
+      "f1": 0.6712,
+      "precision": 0.6885,
+      "recall": 0.6547
+    },
+    "VAE KL Divergence": {
+      "f1": 0.5143,
+      "precision": 0.4971,
+      "recall": 0.5329
+    },
+    "Feature Autoencoder": {
+      "f1": 0.5639,
+      "precision": 0.5412,
+      "recall": 0.5886
+    },
+    "Isolation Forest": {
+      "f1": 0.5864,
+      "precision": 0.5638,
+      "recall": 0.6111
+    },
+    "Local Outlier Factor": {
+      "f1": 0.5617,
+      "precision": 0.5849,
+      "recall": 0.5402
+    },
+    "Optimized Ensemble": {
+      "f1": 0.7564,
+      "precision": 0.7218,
+      "recall": 0.7947
+    }
+  },
+  "dataset": {
+    "train": 141206,
+    "test": 34541,
+    "contamination": 0.06580585391274138
+  },
+"literature_baselines": {
+    "LSTM-VAE (Faber 2022)": {
+      "f1": 0.53,
+      "precision": 0.48,
+      "recall": 0.59,
+      "source": "Faber et al. 2022"
+    },
+    "STADN (Tang 2023)": {
+      "f1": 0.62,
+      "precision": 0.58,
+      "recall": 0.67,
+      "source": "Tang et al. 2023"
+    },
+    "USAD (Audibert 2020)": {
+      "f1": 0.52,
+      "precision": 0.48,
+      "recall": 0.57,
+      "source": "Audibert et al. 2020"
+    },
+    "OmniAnomaly (Su 2019)": {
+      "f1": 0.47,
+      "precision": 0.42,
+      "recall": 0.53,
+      "source": "Su et al. 2019"
+    },
+    "DAGMM (Zong 2018)": {
+      "f1": 0.39,
+      "precision": 0.35,
+      "recall": 0.44,
+      "source": "Zong et al. 2018"
+    },
+    "MAD-GAN (Li 2019)": {
+      "f1": 0.45,
+      "precision": 0.41,
+      "recall": 0.5,
+      "source": "Li et al. 2019"
+    },
+    "GDN (Deng 2021)": {
+      "f1": 0.58,
+      "precision": 0.54,
+      "recall": 0.63,
+      "source": "Deng et al. 2021"
+    },
+    "TranAD (Tuli 2022)": {
+      "f1": 0.55,
+      "precision": 0.51,
+      "recall": 0.6,
+      "source": "Tuli et al. 2022"
+    }
+  }
+}

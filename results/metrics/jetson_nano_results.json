@@ -1,0 +1,120 @@
+{
+  "device": "Jetson Nano (Simulated)",
+  "cuda_available": true,
+  "gpu_name": "NVIDIA GeForce RTX 3060 Ti",
+  "test_samples": 34541,
+  "models": {
+    "LSTM-AE": {
+      "fp32": {
+        "inference_time_ms": {
+          "mean": 1.842243000101007,
+          "std": 0.15498397465501662
+        },
+        "throughput_samples_per_sec": 542.8165556580601,
+        "power_draw_watts": 5.381423,
+        "model_size_mb": 2.9100265502929688,
+        "latency_percentiles_ms": {
+          "p50": 1.668999999310472,
+          "p95": 1.8778850011585746,
+          "p99": 1.9427860006180708,
+          "min": 1.6464000000269152,
+          "max": 2.2229999995033722
+        }
+      },
+      "fp16": {
+        "inference_time_ms": {
+          "mean": 1.6858749999300926,
+          "std": 0.04630955061629379
+        },
+        "throughput_samples_per_sec": 593.1637873753787,
+        "power_draw_watts": 4.7288537999999996,
+        "model_size_mb": 1.4550132751464844,
+        "latency_percentiles_ms": {
+          "p50": 1.6738499998609768,
+          "p95": 1.7621300006794627,
+          "p99": 1.9169080006395234,
+          "min": 1.646100001380546,
+          "max": 2.160399999411311
+        }
+      },
+      "speedup_fp16_vs_fp32": 1.0927518352056935,
+      "size_reduction_fp16_vs_fp32": 2.0
+    },
+    "Feature-AE": {
+      "fp32": {
+        "inference_time_ms": {
+          "mean": 0.8246750000762404,
+          "std": 0.027233778126638648
+        },
+        "throughput_samples_per_sec": 1212.5989024858895,
+        "power_draw_watts": 5.093508,
+        "model_size_mb": 0.7197952270507812,
+        "latency_percentiles_ms": {
+          "p50": 0.8210000014514662,
+          "p95": 0.9191599991027033,
+          "p99": 1.0636130006241729,
+          "min": 0.7896999995864462,
+          "max": 1.186900000902824
+        }
+      },
+      "fp16": {
+        "inference_time_ms": {
+          "mean": 0.848621999975876,
+          "std": 0.053954222193873975
+        },
+        "throughput_samples_per_sec": 1178.38095174109,
+        "power_draw_watts": 4.5561048,
+        "model_size_mb": 0.35991668701171875,
+        "latency_percentiles_ms": {
+          "p50": 0.822899999548099,
+          "p95": 0.9343549983896082,
+          "p99": 1.060592998874199,
+          "min": 0.7922000004327856,
+          "max": 1.2109999988751952
+        }
+      },
+      "speedup_fp16_vs_fp32": 0.9717813114669237,
+      "size_reduction_fp16_vs_fp32": 1.9998940116587176
+    }
+  },
+  "ensemble": {
+    "fp32": {
+      "total_inference_time_ms": 2.6669180001772474,
+      "throughput_samples_per_sec": 374.9646595559138,
+      "total_power_draw_watts": 10.474931
+    },
+    "fp16": {
+      "total_inference_time_ms": 2.5344969999059686,
+      "throughput_samples_per_sec": 394.5556061171509,
+      "total_power_draw_watts": 9.2849586
+    }
+  },
+  "real_time_capability": {
+    "1 Hz (1000 ms)": {
+      "max_latency_ms": 1000,
+      "fp32_capable": true,
+      "fp16_capable": true
+    },
+    "5 Hz (200 ms)": {
+      "max_latency_ms": 200,
+      "fp32_capable": true,
+      "fp16_capable": true
+    },
+    "10 Hz (100 ms)": {
+      "max_latency_ms": 100,
+      "fp32_capable": true,
+      "fp16_capable": true
+    }
+  },
+  "energy_efficiency": {
+    "energy_per_sample_joules": {
+      "fp32": 0.027935782034514654,
+      "fp16": 0.023532699715951122
+    },
+    "energy_per_day_wh": {
+      "fp32": 0.6704587688283518,
+      "fp16": 0.5647847931828269
+    },
+    "energy_savings_fp16_vs_fp32_percent": 15.761442844605261
+  }
+}
