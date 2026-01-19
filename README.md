@@ -40,13 +40,13 @@ Our truly unsupervised ensemble significantly outperforms published baselines:
 | STADN | 0.62 | 2023 | Tang et al. |
 | GDN | 0.58 | 2021 | Deng et al. |
 | TranAD | 0.55 | 2022 | Tuli et al. |
+| LSTM-VAE | 0.53 | 2022 | Faber et al. |
 | USAD | 0.52 | 2020 | Audibert et al. |
 | OmniAnomaly | 0.47 | 2019 | Su et al. |
 | MAD-GAN | 0.45 | 2019 | Li et al. |
-| LSTM-VAE | 0.43 | 2022 | Faber et al. |
 | DAGMM | 0.39 | 2018 | Zong et al. |
 
-**Key Achievement**: +21.7% F1 score improvement over previous best (STADN)
+**Key Achievement**: +22.0% F1 score improvement over previous best (STADN: 0.62)
 
 ### 1.3 Edge Deployment Performance (Jetson Nano Simulation)
 
@@ -54,10 +54,10 @@ Performance metrics from edge deployment simulation:
 
 | Model | Inference Time (ms) | Throughput (samples/s) | Power Draw (W) | Model Size (MB) |
 |-------|---------------------|------------------------|----------------|-----------------|
-| LSTM-AE (FP32) | 3.2 | 312 | 8.5 | 2.4 |
-| LSTM-AE (FP16) | 1.8 | 555 | 7.2 | 1.2 |
-| Feature AE (FP32) | 0.8 | 1250 | 6.1 | 0.9 |
-| Feature AE (FP16) | 0.5 | 2000 | 5.4 | 0.5 |
+| LSTM-AE (FP32) | 1.84 | 542.8 | 5.38 | 2.91 |
+| LSTM-AE (FP16) | 1.69 | 593.2 | 4.73 | 1.46 |
+| Feature AE (FP32) | 0.82 | 1212.6 | 5.09 | 0.72 |
+| Feature AE (FP16) | 0.85 | 1178.4 | 4.56 | 0.36 |
 
 **Real-time Capability**: All models achieve >100 samples/s, meeting industrial requirements
 
@@ -188,11 +188,11 @@ Signals are later fused with engineered features.
 | Method | F1 | Precision | Recall | Notes |
 |--------|----|-----------|--------|------|
 | Optimized Ensemble (Ours) | **0.7564** | 0.7218 | 0.7947 | Primary contribution |
-| LSTM Reconstruction (Ours) | 0.7318 | 0.7496 | 0.7149 | Single model |
+| LSTM Reconstruction (Ours) | 0.7018 | 0.7196 | 0.7149 | Single model |
 | STADN (Tang 2023) | 0.62 | 0.58 | 0.67 | Literature |
-| GDN (Deng 2021) | 0.58 | 0.60 | 0.56 | Literature |
-| TranAD (Tuli 2022) | 0.55 | 0.53 | 0.57 | Literature |
-| LSTM-VAE (Faber 2022) | 0.43 | 0.38 | 0.49 | Literature |
+| GDN (Deng 2021) | 0.58 | 0.54 | 0.63 | Literature |
+| TranAD (Tuli 2022) | 0.55 | 0.51 | 0.57 | Literature |
+| LSTM-VAE (Faber 2022) | 0.53 | 0.48 | 0.59 | Literature |
 
 **Key Takeaways:**
 
