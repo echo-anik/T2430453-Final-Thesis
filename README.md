@@ -17,11 +17,11 @@ This thesis presents a **truly unsupervised, ensemble-based framework** for anom
 
 ## 1. Key Results
 
-### 1.1 Detection Performance (Unsupervised)
+### 1.1 Detection Performance (Unsupervised) (Ours)
 
 | Method | F1 Score | Precision | Recall |
 |--------|----------|-----------|--------|
-| **Equal-Weight Ensemble (Ours)** | **0.7564** | **0.7218** | **0.7947** |
+| **Equal-Weight Ensemble ** | **0.7564** | **0.7218** | **0.7947** |
 | LSTM Reconstruction | 0.7018 | 0.7196 | 0.7149 |
 | VAE Reconstruction | 0.6712 | 0.6885 | 0.6547 |
 | LSTM Latent Distance | 0.6287 | 0.6019 | 0.6582 |
