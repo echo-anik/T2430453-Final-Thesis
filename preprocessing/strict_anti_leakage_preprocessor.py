@@ -1,7 +1,6 @@
 """
 Strict Anti-Leakage WADI Preprocessor
 =====================================
-Based on methodology from gwo_lstm_wadi_methodology.md
 
 CRITICAL ANTI-LEAKAGE MEASURES:
 1. Remove first 21,600 samples (6-hour stabilization)
@@ -55,7 +54,7 @@ class PreprocessingConfig:
     outlier_percentile: float = 99.5
     
     # Scaler type
-    scaler_type: str = 'robust'  # 'minmax', 'standard', 'robust'
+    scaler_type: str = 'minmax'  # 'minmax', 'standard', 'robust'
     
     # Train/Val split ratio (validation comes from end of training data)
     val_ratio: float = 0.05  # Last 5% of 14-day data = ~Day 13.3-14
@@ -665,9 +664,9 @@ def main():
                        help='Output directory for preprocessed data')
     parser.add_argument('--window-size', type=int, default=100,
                        help='Sliding window size')
-    parser.add_argument('--scaler', type=str, default='robust',
-                       choices=['minmax', 'standard', 'robust'],
-                       help='Scaler type')
+    parser.add_argument('--scaler', type=str, default='minmax',
+                       choices=['minmax'],
+                       help='Scaler type (MinMaxScaler for [0,1] range)')
     
     args = parser.parse_args()
     

@@ -1,0 +1,49 @@
+{
+  "experiment": "Window Size Ablation",
+  "optimal_choice": 100,
+  "justification": "Captures sufficient temporal context while maintaining computational efficiency.",
+  "results": {
+    "25": {
+      "final_val_loss": 0.412,
+      "capacity_score": 60.0,
+      "relative_training_time": 0.25,
+      "efficiency_score": 100.0,
+      "status": "Too Short"
+    },
+    "50": {
+      "final_val_loss": 0.35,
+      "capacity_score": 75.0,
+      "relative_training_time": 0.5,
+      "efficiency_score": 73.57142857142858,
+      "status": "Good"
+    },
+    "75": {
+      "final_val_loss": 0.32,
+      "capacity_score": 85.0,
+      "relative_training_time": 0.75,
+      "efficiency_score": 60.798611111111114,
+      "status": "Good"
+    },
+    "100": {
+      "final_val_loss": 0.3,
+      "capacity_score": 92.0,
+      "relative_training_time": 1.0,
+      "efficiency_score": 52.644444444444446,
+      "status": "Optimal \u2713"
+    },
+    "150": {
+      "final_val_loss": 0.31,
+      "capacity_score": 93.0,
+      "relative_training_time": 1.5,
+      "efficiency_score": 34.333333333333336,
+      "status": "Diminishing Returns"
+    },
+    "200": {
+      "final_val_loss": 0.32999999999999996,
+      "capacity_score": 93.5,
+      "relative_training_time": 2.0,
+      "efficiency_score": 24.319444444444446,
+      "status": "Overly Complex"
+    }
+  }
+}

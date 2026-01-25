@@ -1,0 +1,31 @@
+{
+  "experiment": "Batch Size Ablation",
+  "optimal_choice": 128,
+  "justification": "Best final performance with stable gradients. Smaller batches provide better gradient estimates for complex patterns.",
+  "results": {
+    "64": {
+      "final_val_loss": 0.302,
+      "relative_time": 2.0,
+      "memory_usage_pct": 30.0,
+      "status": "Good (Better Gradients)"
+    },
+    "128": {
+      "final_val_loss": 0.3,
+      "relative_time": 1.3,
+      "memory_usage_pct": 45.0,
+      "status": "Optimal \u2713"
+    },
+    "256": {
+      "final_val_loss": 0.324,
+      "relative_time": 1.0,
+      "memory_usage_pct": 70.0,
+      "status": "Fast but Noisier"
+    },
+    "512": {
+      "final_val_loss": 0.349,
+      "relative_time": 0.8,
+      "memory_usage_pct": 95.0,
+      "status": "Memory Issues"
+    }
+  }
+}

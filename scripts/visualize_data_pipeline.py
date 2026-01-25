@@ -107,7 +107,7 @@ def create_data_pipeline_flowchart(stats):
             'test': f"Test: ~{stats['preprocessed_test_samples']:,} samples × {stats['preprocessed_features']} features",
             'total': f"Removed {stats['features_removed']} features ({stats['features_removed']/stats['initial_features']*100:.1f}%)",
             'color': COLORS['kept'],
-            'description': f"• Removed stabilization period (first 6 hours)\n• Removed {stats['features_removed']} constant/low-variance features\n• K-S test for feature selection\n• Outlier clipping & robust scaling"
+            'description': f"• Removed stabilization period (first 6 hours)\n• Removed {stats['features_removed']} constant/low-variance features\n• K-S test for feature selection\n• Outlier clipping & min-max normalization [0,1]"
         },
         {
             'title': 'Stage 3: Sliding Window Creation',

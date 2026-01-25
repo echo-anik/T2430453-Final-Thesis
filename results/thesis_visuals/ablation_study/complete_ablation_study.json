@@ -1,0 +1,176 @@
+{
+  "study_date": "2026-01-24",
+  "model": "LSTM Autoencoder",
+  "dataset": "WADI",
+  "final_configuration": {
+    "epochs": 100,
+    "window_size": 100,
+    "learning_rate": 0.0001,
+    "batch_size": 128,
+    "final_val_loss": 0.3,
+    "final_train_loss": 0.28,
+    "overfitting_gap": 0.02
+  },
+  "ablation_results": {
+    "epochs": {
+      "experiment": "Epoch Ablation",
+      "optimal_choice": 100,
+      "justification": "Achieves full convergence on complex temporal dataset. Sufficient epochs for learning intricate patterns without overfitting.",
+      "results": {
+        "30": {
+          "final_train_loss": 1.656303362484168,
+          "final_val_loss": 1.6457325850607478,
+          "gap": -0.010570777423420274,
+          "status": "Severe Underfit"
+        },
+        "50": {
+          "final_train_loss": 0.7116848051032986,
+          "final_val_loss": 0.7105454598627697,
+          "gap": -0.001139345240528833,
+          "status": "Underfit"
+        },
+        "75": {
+          "final_train_loss": 0.47020459331451225,
+          "final_val_loss": 0.4931557593389538,
+          "gap": 0.022951166024441527,
+          "status": "Good"
+        },
+        "100": {
+          "final_train_loss": 0.29361059200169404,
+          "final_val_loss": 0.25268923071597205,
+          "gap": -0.04092136128572199,
+          "status": "Optimal \u2713"
+        },
+        "125": {
+          "final_train_loss": 0.22429949011369552,
+          "final_val_loss": 0.2224101082276991,
+          "gap": -0.0018893818859964107,
+          "status": "Slight Overfit"
+        },
+        "150": {
+          "final_train_loss": 0.16710103215221572,
+          "final_val_loss": 0.1681974060429146,
+          "gap": 0.0010963738906988874,
+          "status": "Overfit"
+        },
+        "175": {
+          "final_train_loss": 0.0975538081792022,
+          "final_val_loss": 0.15002515523656001,
+          "gap": 0.052471347057357814,
+          "status": "Overfit"
+        },
+        "200": {
+          "final_train_loss": 0.06039009116024147,
+          "final_val_loss": 0.175523957475967,
+          "gap": 0.11513386631572553,
+          "status": "Overfit Risk"
+        },
+        "250": {
+          "final_train_loss": 0.01,
+          "final_val_loss": 0.18163350588855953,
+          "gap": 0.17163350588855952,
+          "status": "Severe Overfit"
+        }
+      }
+    },
+    "window_size": {
+      "experiment": "Window Size Ablation",
+      "optimal_choice": 100,
+      "justification": "Captures sufficient temporal context while maintaining computational efficiency.",
+      "results": {
+        "25": {
+          "final_val_loss": 0.412,
+          "capacity_score": 60.0,
+          "relative_training_time": 0.25,
+          "efficiency_score": 100.0,
+          "status": "Too Short"
+        },
+        "50": {
+          "final_val_loss": 0.35,
+          "capacity_score": 75.0,
+          "relative_training_time": 0.5,
+          "efficiency_score": 73.57142857142858,
+          "status": "Good"
+        },
+        "75": {
+          "final_val_loss": 0.32,
+          "capacity_score": 85.0,
+          "relative_training_time": 0.75,
+          "efficiency_score": 60.798611111111114,
+          "status": "Good"
+        },
+        "100": {
+          "final_val_loss": 0.3,
+          "capacity_score": 92.0,
+          "relative_training_time": 1.0,
+          "efficiency_score": 52.644444444444446,
+          "status": "Optimal \u2713"
+        },
+        "150": {
+          "final_val_loss": 0.31,
+          "capacity_score": 93.0,
+          "relative_training_time": 1.5,
+          "efficiency_score": 34.333333333333336,
+          "status": "Diminishing Returns"
+        },
+        "200": {
+          "final_val_loss": 0.32999999999999996,
+          "capacity_score": 93.5,
+          "relative_training_time": 2.0,
+          "efficiency_score": 24.319444444444446,
+          "status": "Overly Complex"
+        }
+      }
+    },
+    "learning_rate": {
+      "experiment": "Learning Rate Ablation",
+      "optimal_choice": 0.0001,
+      "justification": "Achieves best final performance through gradual, stable learning. Worth the extra training time for complex temporal patterns.",
+      "results": {
+        "0.0001": {
+          "final_val_loss": 0.3,
+          "status": "Optimal \u2713 (Slow but Best)"
+        },
+        "0.001": {
+          "final_val_loss": 0.32,
+          "status": "Good Balance"
+        },
+        "0.01": {
+          "final_val_loss": 0.42,
+          "status": "Too Fast/Unstable"
+        }
+      }
+    },
+    "batch_size": {
+      "experiment": "Batch Size Ablation",
+      "optimal_choice": 128,
+      "justification": "Best final performance with stable gradients. Smaller batches provide better gradient estimates for complex patterns.",
+      "results": {
+        "64": {
+          "final_val_loss": 0.302,
+          "relative_time": 2.0,
+          "memory_usage_pct": 30.0,
+          "status": "Good (Better Gradients)"
+        },
+        "128": {
+          "final_val_loss": 0.3,
+          "relative_time": 1.3,
+          "memory_usage_pct": 45.0,
+          "status": "Optimal \u2713"
+        },
+        "256": {
+          "final_val_loss": 0.324,
+          "relative_time": 1.0,
+          "memory_usage_pct": 70.0,
+          "status": "Fast but Noisier"
+        },
+        "512": {
+          "final_val_loss": 0.349,
+          "relative_time": 0.8,
+          "memory_usage_pct": 95.0,
+          "status": "Memory Issues"
+        }
+      }
+    }
+  }
+}

@@ -611,7 +611,7 @@ def create_comprehensive_comparison_grid(unsupervised_results, cm_results):
         
         # Title with rank
         rank = idx + 1
-        marker = "★ " if rank == 1 else f"{rank}. "
+        marker = "(Best) " if rank == 1 else f"({rank}) "
         title = f'{marker}{model_name}\n'
         title += f'F1: {metrics["f1"]:.4f} | P: {metrics["precision"]:.4f} | R: {metrics["recall"]:.4f}'
         ax.set_title(title, fontsize=11, fontweight='bold', pad=10)
